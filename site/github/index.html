@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Github - Zult</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Zult</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../airflow/" class="nav-link">Apache Airflow</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Github</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../mysql-server/" class="nav-link">Mysql server</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../airflow/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../mysql-server/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#github" class="nav-link">Github</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#passo-1-atualize-o-sistema" class="nav-link">Passo 1: Atualize o sistema</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-2-instale-o-git" class="nav-link">Passo 2: Instale o Git</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-3-baixe-o-instalador-do-git-bash" class="nav-link">Passo 3: Baixe o instalador do Git Bash</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-4-abra-o-terminal-e-va-para-a-pasta-downloads" class="nav-link">Passo 4: Abra o terminal e vá para a pasta Downloads</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-5-instale-o-git-bash" class="nav-link">Passo 5: Instale o Git Bash</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-6-conclua-a-instalacao" class="nav-link">Passo 6: Conclua a instalação</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#criacao-de-repositorio-no-github" class="nav-link">Criação de Repositório no GitHub</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#passo-1-acesse-o-github" class="nav-link">Passo 1: Acesse o GitHub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-2-crie-um-novo-repositorio" class="nav-link">Passo 2: Crie um Novo Repositório</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-3-preencha-as-informacoes-do-repositorio" class="nav-link">Passo 3: Preencha as Informações do Repositório</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-4-confirme-a-criacao-do-repositorio" class="nav-link">Passo 4: Confirme a Criação do Repositório</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-5-acesse-o-repositorio-criado" class="nav-link">Passo 5: Acesse o Repositório Criado</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#conclusao" class="nav-link">Conclusão</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#criacao-e-configuracao-de-chave-ssh-para-conta-github" class="nav-link">Criação e Configuração de Chave SSH para Conta GitHub</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#passo-1-gerando-uma-chave-ssh" class="nav-link">Passo 1: Gerando uma Chave SSH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-2-adicionando-a-chave-ssh-a-sua-conta-github" class="nav-link">Passo 2: Adicionando a Chave SSH à sua Conta GitHub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#passo-3-testando-a-chave-ssh" class="nav-link">Passo 3: Testando a Chave SSH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#conclusao_1" class="nav-link">Conclusão</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="github">Github</h1>
+<h2 id="passo-1-atualize-o-sistema">Passo 1: Atualize o sistema</h2>
+<p><code>sudo yum update -y</code></p>
+<h2 id="passo-2-instale-o-git">Passo 2: Instale o Git</h2>
+<p><code>sudo yum install git -y</code></p>
+<h2 id="passo-3-baixe-o-instalador-do-git-bash">Passo 3: Baixe o instalador do Git Bash</h2>
+<p>Acesse o site oficial do Git Bash (https://gitforwindows.org/) e baixe o instalador adequado para o seu sistema operacional CentOS. Por padrão, o instalador será salvo na pasta Downloads.</p>
+<h2 id="passo-4-abra-o-terminal-e-va-para-a-pasta-downloads">Passo 4: Abra o terminal e vá para a pasta Downloads</h2>
+<p><code>cd Downloads</code></p>
+<h2 id="passo-5-instale-o-git-bash">Passo 5: Instale o Git Bash</h2>
+<p><code>sh Git-2.31.1-64-bit.exe</code></p>
+<h2 id="passo-6-conclua-a-instalacao">Passo 6: Conclua a instalação</h2>
+<p>Siga as instruções do instalador do Git Bash para</p>
+<h1 id="criacao-de-repositorio-no-github">Criação de Repositório no GitHub</h1>
+<h2 id="passo-1-acesse-o-github">Passo 1: Acesse o GitHub</h2>
+<p>Acesse o site oficial do GitHub (https://github.com/) e faça login na sua conta.</p>
+<h2 id="passo-2-crie-um-novo-repositorio">Passo 2: Crie um Novo Repositório</h2>
+<p>Clique no botão "New" (Novo) na página principal do GitHub. </p>
+<p><img alt="New Repository button" src="https://user-images.githubusercontent.com/70767722/131229699-7e98d9cc-7321-4883-a12e-5760da8d17b7.png" /></p>
+<h2 id="passo-3-preencha-as-informacoes-do-repositorio">Passo 3: Preencha as Informações do Repositório</h2>
+<p>Preencha as informações do repositório na página de criação do repositório, incluindo:</p>
+<ul>
+<li>Nome do repositório: Escolha um nome para o seu repositório. Certifique-se de que o nome seja descritivo e fácil de lembrar.</li>
+<li>Descrição: Escreva uma descrição breve do seu repositório.</li>
+<li>Tipo de repositório: Selecione o tipo de repositório que você deseja criar. Você pode optar por criar um repositório público ou privado. Selecione "Public" para tornar o repositório público e "Private" para torná-lo privado.</li>
+<li>Inicialização do repositório: Selecione "Initialize this repository with a README" para criar um arquivo README.md vazio para o seu repositório.</li>
+</ul>
+<p><img alt="Create a new repository page" src="https://user-images.githubusercontent.com/70767722/131229754-bfd0684e-fd8d-4d48-a735-1b7a44e2f0a2.png" /></p>
+<h2 id="passo-4-confirme-a-criacao-do-repositorio">Passo 4: Confirme a Criação do Repositório</h2>
+<p>Verifique se as informações do seu repositório estão corretas e clique em "Create Repository" (Criar repositório).</p>
+<p><img alt="Confirm repository creation" src="https://user-images.githubusercontent.com/70767722/131229819-3b87664a-9df0-4d7f-a8a5-5e5debcddbe1.png" /></p>
+<h2 id="passo-5-acesse-o-repositorio-criado">Passo 5: Acesse o Repositório Criado</h2>
+<p>Após a criação do repositório, você será redirecionado para a página do seu repositório. Você também pode acessar o repositório a qualquer momento a partir da página principal do GitHub, clicando no nome do repositório.</p>
+<p><img alt="Repository page" src="https://user-images.githubusercontent.com/70767722/131229882-b3d6d17f-7aa8-4c03-9ab2-4d4e7f34216f.png" /></p>
+<h2 id="conclusao">Conclusão</h2>
+<p>Agora você criou com sucesso um repositório no GitHub. O repositório está pronto para receber arquivos e ser utilizado para o versionamento de código fonte, colaboração e gerenciamento de projetos.</p>
+<h1 id="criacao-e-configuracao-de-chave-ssh-para-conta-github">Criação e Configuração de Chave SSH para Conta GitHub</h1>
+<h2 id="passo-1-gerando-uma-chave-ssh">Passo 1: Gerando uma Chave SSH</h2>
+<ol>
+<li>Abra o terminal do seu servidor e digite o seguinte comando para gerar uma nova chave SSH:</li>
+</ol>
+<p><code>ssh-keygen -t ed25519 -C "seu_email@exemplo.com"</code></p>
+<ol>
+<li>
+<p>Quando solicitado, pressione "Enter" para aceitar o local padrão de armazenamento da chave ou digite um caminho diferente.</p>
+</li>
+<li>
+<p>Digite uma senha para proteger a chave SSH, se desejar.</p>
+</li>
+<li>
+<p>A chave SSH foi gerada com sucesso. Você pode ver o conteúdo da chave digitando o seguinte comando:</p>
+</li>
+</ol>
+<p><code>cat ~/.ssh/id_ed25519.pub</code></p>
+<ol>
+<li>Copie o conteúdo da chave SSH gerada.</li>
+</ol>
+<h2 id="passo-2-adicionando-a-chave-ssh-a-sua-conta-github">Passo 2: Adicionando a Chave SSH à sua Conta GitHub</h2>
+<ol>
+<li>
+<p>Faça login na sua conta GitHub e acesse as configurações de SSH.</p>
+</li>
+<li>
+<p>Clique em "SSH and GPG keys" (Chaves SSH e GPG).</p>
+</li>
+<li>
+<p>Clique em "New SSH key" (Nova chave SSH).</p>
+</li>
+<li>
+<p>Cole a chave SSH gerada na seção "Key".</p>
+</li>
+<li>
+<p>Digite um título para a chave SSH na seção "Title".</p>
+</li>
+<li>
+<p>Clique em "Add SSH key" (Adicionar chave SSH).</p>
+</li>
+<li>
+<p>A chave SSH foi adicionada à sua conta GitHub com sucesso.</p>
+</li>
+</ol>
+<h2 id="passo-3-testando-a-chave-ssh">Passo 3: Testando a Chave SSH</h2>
+<ol>
+<li>Abra o terminal do seu servidor e digite o seguinte comando:</li>
+</ol>
+<p><code>ssh -T git@github.com</code></p>
+<ol>
+<li>
+<p>Se você vir uma mensagem de confirmação, como "Hi {seu_nome_de_usuario}! You've successfully authenticated, but GitHub does not provide shell access" (Olá {seu_nome_de_usuario}! Você autenticou com sucesso, mas o GitHub não fornece acesso ao shell), significa que a chave SSH foi configurada com sucesso.</p>
+</li>
+<li>
+<p>Agora você pode usar a chave SSH para se conectar à sua conta GitHub a partir do seu servidor, sem precisar inserir sua senha todas as vezes.</p>
+</li>
+</ol>
+<h2 id="conclusao_1">Conclusão</h2>
+<p>Agora você criou com sucesso uma chave SSH e a adicionou à sua conta GitHub. Isso permitirá que você se conecte à sua conta GitHub a partir do seu servidor de forma segura e conveniente, sem precisar digitar sua senha todas as vezes.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

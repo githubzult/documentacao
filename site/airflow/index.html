@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Apache Airflow - Zult</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Zult</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Apache Airflow</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../github/" class="nav-link">Github</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../mysql-server/" class="nav-link">Mysql server</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../github/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#apache-airflow" class="nav-link">Apache Airflow</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#preparando-ambiente" class="nav-link">Preparando ambiente</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="apache-airflow">Apache Airflow</h1>
+<h2 id="preparando-ambiente">Preparando ambiente</h2>
+<p>Em primeiro lugar, é altamente recomendável criar um usuário específico para o Airflow:</p>
+<p><code>useradd airflow</code></p>
+<h3 id="pacotes-de-desenvolvimento-necessarios">Pacotes de desenvolvimento necessários:</h3>
+<p><code>yum instalar gcc</code></p>
+<p><code>yum instalar python3-devel</code></p>
+<p><code>yum instalar mysql-devel</code></p>
+<h3 id="vamos-instalar-o-airflow-e-pacotes-extras-se-necessarios">Vamos instalar o Airflow e pacotes extras se necessários:</h3>
+<p><code>pip3 instalar apache-airflow</code></p>
+<p><code>pip3 instalar 'apache-airflow[crypto]'</code></p>
+<p><code>pip3 instalar 'apache-airflow[mysql]'</code></p>
+<h3 id="preparacao-do-daemon-do-airflow">Preparação do Daemon do Airflow</h3>
+<p>Antes de podermos configurar nosso <code>systemd</code> serviço para o Airflow, precisamos fazer alguns preparativos. A primeira etapa será baixar os arquivos de definição de serviço do Airflow GitHub Repo.</p>
+<p><a href="https://github.com/apache/airflow/tree/master/scripts/systemd">https://github.com/apache/airflow/tree/master/scripts/systemd</a></p>
+<p><strong>Baixe os arquivos do serviço daemon</strong></p>
+<p>Vamos criar uma pasta temporária para os arquivos de download.</p>
+<p><code>mkdir /tmp/airflow-daemon</code></p>
+<p><code>cd /tmp/airflow-daemon</code></p>
+<p><strong>Em seguida, baixe os arquivos para esta pasta temporária.</strong></p>
+<p><code>wget https://raw.githubusercontent.com/apache/airflow/master/scripts/systemd/airflow</code></p>
+<p><code>wget https://raw.githubusercontent.com/apache/airflow/master/scripts/systemd/airflow-scheduler.service</code> </p>
+<p><code>wget https://raw.githubusercontent.com/apache/airflow/master/scripts/systemd/airflow-webserver.service</code> </p>
+<p><code>wget https://raw.githubusercontent.com/apache/airflow/master/scripts/systemd/airflow.conf</code> </p>
+<p><em>Os arquivos systemd neste diretório são testados em sistemas baseados em RedHat. Copie (ou vincule-os) para /usr/lib/systemd/system
+e copie o airflow.conf para /etc/tmpfiles.d/ ou /usr/lib/tmpfiles.d/. Copiar airflow.conf garante que /run/airflow seja
+criado com o proprietário e as permissões corretos (0755 airflow airflow)</em></p>
+<p><em>Você pode então iniciar os diferentes servidores usando systemctl start <service>. A habilitação de serviços pode ser feita emitindo
+systemctl enable <service>.</em></p>
+<p><em>Por padrão, a configuração do ambiente aponta para /etc/sysconfig/airflow . Você pode copiar o arquivo “airflow” neste
+diretório e ajustá-lo ao seu gosto.</em></p>
+<p><em>Com algumas pequenas alterações, eles provavelmente funcionam em outros sistemas systemd.</em></p>
+<p>Bem, acho que para a maioria daqueles que não têm experiência em Linux, a documentação acima pode ser muito vaga e enganosa. Então, desenhei este diagrama para mostrar qual arquivo deve ser colocado em qual caminho.</p>
+<p><img alt="teste" src="/opt/mkdocs/documentacao/docs/scripts-systemd.jpg" /></p>
+<p>De acordo com o caminho indicado no diagrama, vamos copiar os arquivos para o local correto.</p>
+<p><em>Crie os diretórios necessários</em>
+Também precisamos criar alguns diretórios que o daemon requer. Em primeiro lugar, ele precisa de um diretório dedicado para armazenar informações de tempo de execução, como o arquivo pid. Vamos criar o diretório sob o /rundiretório e alterar a permissão.</p>
+<p><code>mkdir /run/airflow</code></p>
+<p><code>chown airflow:airflow /run/airflow</code></p>
+<p><code>chmod 0755 airflow -R</code></p>
+<p>Observe que a permissão está definida como <code>0755</code> praticamente porque podemos ter vários outros usuários para desenvolver DAGs (fluxos de trabalho) no Airflow. Com <code>0755</code> permissão, garante que todos os outros usuários tenham seu grupo secundário, pois <code>airflow</code> terão permissões suficientes.</p>
+<p>Outro diretório que precisamos criar é o diretório inicial do Airflow, que inclui:</p>
+<ul>
+<li>configurações de fluxo de ar</li>
+<li>SQLite que é usado pelo Airflow</li>
+<li>DAG</li>
+<li>Registros de DAGs</li>
+</ul>
+<p>Normalmente, se não houver <code>export AIRFLOW_HOME=...</code>, eles serão gerados automaticamente no diretório inicial do usuário atual, como <code>/home/airflow/airflow/</code>. </p>
+<p>Isso é bom se você estiver testando o Airflow ou desenvolvendo alguns DAGs. No entanto, não é recomendado e também não é conveniente em produção, porque outros usuários não acessarão facilmente airflowo diretório inicial do usuário.</p>
+<p>No meu caso, gostaria de colocar o diretório inicial do Airflow em <code>/opt</code>, então vamos criá-lo.</p>
+<p>Novamente, altere a permissão para permitir que todos os usuários do <code>airflow</code> grupo possam não apenas ler, mas também gravar no diretório porque precisam modificar os DAGs.</p>
+<p><em>Inicializando o diretório inicial do Airflow</em>
+Tudo está preparado. Precisamos inicializar o diretório inicial do Airflow. É importante exportar o diretório inicial para a <code>AIRFLOW_HOME</code> variável de ambiente. Caso contrário, o diretório inicial será gerado automaticamente na pasta pessoal do usuário conforme mencionado acima.</p>
+<p><code>export AIRFLOW_HOME=/opt/airflow</code></p>
+<p><code>airflow initdb</code></p>
+<h3 id="configurar-o-daemon-do-airflow">Configurar o Daemon do Airflow</h3>
+<p>Agora, todos os arquivos de serviço, arquivos de configuração e diretórios necessários estão prontos. Precisamos configurar o daemon para garantir que tudo esteja apontando para os caminhos corretos antes que o daemon possa ser executado corretamente.</p>
+<p>Em primeiro lugar, vamos verificar novamente o caminho do <code>airflow</code> arquivo binário porque ele precisa ser especificado na definição do serviço posteriormente.</p>
+<p><code>$ which airflow</code></p>
+<p><code>/usr/local/bin/airflow</code></p>
+<p>Então, vamos modificar a definição do <code>airflow-webserver</code>.</p>
+<p><code>nano /usr/lib/systemd/system/airflow-scheduler.service</code></p>
+<p>Da mesma forma, vamos alterá-lo o <code>airflow-scheduler</code>, também.</p>
+<p><code>nano /usr/lib/systemd/system/airflow-webserver.service</code></p>
+<p>note que o <code>pid</code> precisa ser escrito no diretório que acabamos de criar <code>/run/airflow</code>.</p>
+<p><code>ExecStart=/usr/local/bin/airflow servidor web --pid /run/airflow/webserver.pid</code></p>
+<p>Então, precisamos modificar a configuração do sistema do Airflow. Caso contrário, os serviços não saberão onde está o diretório inicial do Airflow.</p>
+<p><code>nano /etc/sysconfig/airflow</code></p>
+<p>As duas configurações abaixo precisam ser modificadas da seguinte forma, com base no que acabamos de preparar.</p>
+<p><code>AIRFLOW_CONFIG=/opt/airflow/airflow.cfg</code></p>
+<p><code>AIRFLOW_HOME=/opt/airflow</code></p>
+<p>Como última etapa da configuração dos serviços, precisamos habilitá-los antes de executá-los.</p>
+<p><code>systemctl enable airflow-scheduler</code></p>
+<p><code>systemctl enable airflow-webserver</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
