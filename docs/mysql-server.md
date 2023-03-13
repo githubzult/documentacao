@@ -1,4 +1,4 @@
-## Instalação do MySQL Server no CentOS 8.0
+# Instalação do MySQL Server no CentOS 8.0
 
 O MySQL Server é um sistema gerenciador de banco de dados relacionais amplamente utilizado. O CentOS 8.0 é um sistema operacional baseado em Linux popular que é compatível com o MySQL Server. Neste guia, você aprenderá como instalar o MySQL Server no CentOS 8.0 usando o gerenciador de pacotes yum.
 

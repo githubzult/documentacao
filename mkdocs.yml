@@ -1,1 +1,14 @@
 site_name: Zult
+theme:
+  name: material
+  logo: assets/img/logo.png
+  palette:
+    primary: grey
+  logo_width: 200
+nav:
+  - Início: index.md
+  - Documentação:
+      - Python: python.md
+      - Airflow: airflow.md
+      - Github: github.md
+      - Mysql: mysql-server.md
