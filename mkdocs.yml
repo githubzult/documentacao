@@ -11,4 +11,4 @@ nav:
       - Python: python.md
       - Airflow: airflow.md
       - Github: github.md
-      - Mysql: mysql-server.md
+      - Mysql: mysql.md
