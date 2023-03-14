@@ -213,14 +213,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Documentação
+          Documentação ambiente
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Documentação
+          Documentação ambiente
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -355,6 +355,97 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        Mkdocs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Documentação DW
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Documentação DW
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster/" class="md-nav__link">
+        Cluster mysql
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        Estrutura Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        Backup&recovery
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -476,7 +567,7 @@ systemctl enable <service>.</em></p>
 diretório e ajustá-lo ao seu gosto.</em></p>
 <p><em>Com algumas pequenas alterações, eles provavelmente funcionam em outros sistemas systemd.</em></p>
 <p>Bem, acho que para a maioria daqueles que não têm experiência em Linux, a documentação acima pode ser muito vaga e enganosa. Então, desenhei este diagrama para mostrar qual arquivo deve ser colocado em qual caminho.</p>
-<p><img alt="estrutura" src="/assets/img/scripts-systemd.jpg" /></p>
+<p><img alt="estrutura" src="../assets/img/scripts-systemd.jpg" /></p>
 <p>De acordo com o caminho indicado no diagrama, vamos copiar os arquivos para o local correto.</p>
 <p><em>Crie os diretórios necessários</em>
 Também precisamos criar alguns diretórios que o daemon requer. Em primeiro lugar, ele precisa de um diretório dedicado para armazenar informações de tempo de execução, como o arquivo pid. Vamos criar o diretório sob o /rundiretório e alterar a permissão.</p>
