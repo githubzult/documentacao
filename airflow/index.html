@@ -476,7 +476,7 @@ systemctl enable <service>.</em></p>
 diretório e ajustá-lo ao seu gosto.</em></p>
 <p><em>Com algumas pequenas alterações, eles provavelmente funcionam em outros sistemas systemd.</em></p>
 <p>Bem, acho que para a maioria daqueles que não têm experiência em Linux, a documentação acima pode ser muito vaga e enganosa. Então, desenhei este diagrama para mostrar qual arquivo deve ser colocado em qual caminho.</p>
-<p><img alt="estrutura" src="/docs/assets/img/scripts-systemd.jpg" /></p>
+<p><img alt="estrutura" src="/assets/img/scripts-systemd.jpg" /></p>
 <p>De acordo com o caminho indicado no diagrama, vamos copiar os arquivos para o local correto.</p>
 <p><em>Crie os diretórios necessários</em>
 Também precisamos criar alguns diretórios que o daemon requer. Em primeiro lugar, ele precisa de um diretório dedicado para armazenar informações de tempo de execução, como o arquivo pid. Vamos criar o diretório sob o /rundiretório e alterar a permissão.</p>
