@@ -62,7 +62,7 @@ diretório e ajustá-lo ao seu gosto.*
 
 Bem, acho que para a maioria daqueles que não têm experiência em Linux, a documentação acima pode ser muito vaga e enganosa. Então, desenhei este diagrama para mostrar qual arquivo deve ser colocado em qual caminho.
 
-![estrutura](/docs/assets/img/scripts-systemd.jpg)
+![estrutura](/assets/img/scripts-systemd.jpg)
 
 
 De acordo com o caminho indicado no diagrama, vamos copiar os arquivos para o local correto.
