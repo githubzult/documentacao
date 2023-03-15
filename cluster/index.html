@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../mkdocs/">
+        <link rel="prev" href="../centos/">
       
       
         <link rel="next" href="../database/">
@@ -65,6 +65,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#configuracoes-cluster" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -316,6 +321,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../centos/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -363,6 +382,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -432,6 +453,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -446,9 +469,53 @@
                   
 
 
-  <h1>Cluster mysql</h1>
-
-
+<h1 id="configuracoes-cluster">Configurações cluster</h1>
+<p>Apresentaremos um detalhamento das configurações do cluster MySQL, abordando em detalhes cada uma das configurações mencionadas e fornecendo informações úteis sobre como ajustá-las para otimizar o desempenho e a segurança do cluster. Essas configurações são cruciais para o bom funcionamento do cluster MySQL e, portanto, devem ser cuidadosamente consideradas e ajustadas de acordo com as necessidades específicas do sistema, configurações estas que são determinadas no arquivo <code>/etc/my.cnf</code>.</p>
+<p><em>O InnoDB é um mecanismo de armazenamento de banco de dados relacional para o MySQL, que é projetado para fornecer transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade) e suporte a chaves estrangeiras. Ele é amplamente utilizado em ambientes de produção para garantir a confiabilidade e a integridade dos dados do banco de dados. O InnoDB é capaz de lidar com grandes volumes de dados e suporta recursos avançados, como controle de concorrência multiversão e recuperação automática de falhas. Além disso, o InnoDB é o mecanismo padrão de armazenamento no MySQL a partir da versão 5.5.</em></p>
+<ol>
+<li>
+<p><strong>read_only</strong>: Define o cluster MySQL como somente leitura, impedindo a gravação em qualquer tabela. É útil quando você precisa proteger seus dados de gravações acidentais ou maliciosas.</p>
+</li>
+<li>
+<p><strong>innodb_force_recovery</strong>: Recupera um banco de dados do MySQL em caso de falhas críticas do InnoDB, como corrupção de tabela ou corrupção de arquivo de log. Ele força o InnoDB a iniciar mesmo que detecte problemas de corrupção.</p>
+</li>
+<li>
+<p><strong>bind-address</strong>: Define o endereço IP ao qual o servidor MySQL está vinculado. É útil quando você tem várias interfaces de rede em um servidor e deseja especificar qual deve ser usada pelo servidor MySQL.</p>
+</li>
+<li>
+<p><strong>server-id</strong>: Define um identificador exclusivo para o servidor MySQL em um cluster de replicação. É usado para garantir que cada servidor tenha um ID exclusivo para que as atualizações sejam replicadas corretamente em todo o cluster.</p>
+</li>
+<li>
+<p><strong>log_bin</strong>: Habilita o registro binário, que é um log de todas as atualizações feitas em um banco de dados MySQL. É usado para replicação, backups e recuperação de desastres.</p>
+</li>
+<li>
+<p><strong>binlog_expire_logs_seconds</strong>: Define a quantidade de tempo, em segundos, que o MySQL manterá os registros binários. É usado para gerenciamento de espaço em disco e segurança.</p>
+</li>
+<li>
+<p><strong>innodb_buffer_pool_size</strong>: Define o tamanho do buffer pool InnoDB, que é a área da memória usada para armazenar dados e índices. É importante definir um valor adequado para esta configuração para garantir um bom desempenho do banco de dados.</p>
+</li>
+<li>
+<p><strong>innodb_log_buffer_size</strong>: Define o tamanho do buffer de log InnoDB, que é a área da memória usada para armazenar as alterações no banco de dados antes de serem gravadas no disco. É importante definir um valor adequado para esta configuração para garantir que as transações sejam gravadas no log de forma eficiente.</p>
+</li>
+<li>
+<p><strong>innodb_log_file_size</strong>: Define o tamanho dos arquivos de log InnoDB. É importante definir um valor adequado para esta configuração para garantir que os arquivos de log não fiquem cheios rapidamente.</p>
+</li>
+<li>
+<p><strong>innodb_write_io_threads</strong>: Define o número de threads usados para gravação de dados no disco pelo InnoDB. É importante definir um valor adequado para esta configuração para garantir um bom desempenho do banco de dados.</p>
+</li>
+<li>
+<p><strong>innodb_flush_log_at_trx_commit</strong>: Define como o InnoDB lida com a gravação de alterações no log de transações. É importante definir um valor adequado para esta configuração para garantir a durabilidade dos dados em caso de falhas do sistema.</p>
+</li>
+<li>
+<p><strong>max_connections</strong>: Define o número máximo de conexões simultâneas permitidas ao servidor MySQL. É importante definir um valor adequado para esta configuração para garantir que o servidor não fique sobrecarregado.</p>
+</li>
+<li>
+<p><strong>net_buffer_length</strong>: Define o tamanho do buffer de rede usado pelo servidor MySQL. É importante definir um valor adequado para esta configuração para garantir um bom desempenho do servidor.</p>
+</li>
+<li>
+<p><strong>max_allowed_packet</strong>: Define o tamanho máximo de um pacote que pode ser enviado ou recebido pelo servidor MySQL.</p>
+</li>
+</ol>
 
 
 

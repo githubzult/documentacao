@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../github/">
+        <link rel="prev" href="../mkdocs/">
       
       
-        <link rel="next" href="../mkdocs/">
+        <link rel="next" href="../cluster/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Mysql - Zult</title>
+        <title>Linux - Zult</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#instalacao-do-mysql-server-no-centos-80" class="md-skip">
+        <a href="#detalhes-e-homologacao-do-centos-80" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mysql
+              Linux
             
           </span>
         </div>
@@ -299,73 +299,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Mysql
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mysql/" class="md-nav__link">
         Mysql
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pre-requisitos" class="md-nav__link">
-    Pré-requisitos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passo-1-adicione-o-repositorio-mysql" class="md-nav__link">
-    Passo 1: Adicione o repositório MySQL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passo-2-instale-o-mysql-server" class="md-nav__link">
-    Passo 2: Instale o MySQL Server
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passo-3-inicie-o-mysql-server" class="md-nav__link">
-    Passo 3: Inicie o MySQL Server
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -389,11 +327,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../centos/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Linux
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-do-centos-80" class="md-nav__link">
+    Características do CentOS 8.0
+  </a>
+  
+    <nav class="md-nav" aria-label="Características do CentOS 8.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pacotes-de-software" class="md-nav__link">
+    Pacotes de software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-do-linux" class="md-nav__link">
+    Kernel do Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    Segurança
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes" class="md-nav__link">
+    Gerenciamento de pacotes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -515,29 +542,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pre-requisitos" class="md-nav__link">
-    Pré-requisitos
+  <a href="#introducao" class="md-nav__link">
+    Introdução
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passo-1-adicione-o-repositorio-mysql" class="md-nav__link">
-    Passo 1: Adicione o repositório MySQL
+  <a href="#caracteristicas-do-centos-80" class="md-nav__link">
+    Características do CentOS 8.0
   </a>
+  
+    <nav class="md-nav" aria-label="Características do CentOS 8.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pacotes-de-software" class="md-nav__link">
+    Pacotes de software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-do-linux" class="md-nav__link">
+    Kernel do Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    Segurança
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes" class="md-nav__link">
+    Gerenciamento de pacotes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passo-2-instale-o-mysql-server" class="md-nav__link">
-    Passo 2: Instale o MySQL Server
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passo-3-inicie-o-mysql-server" class="md-nav__link">
-    Passo 3: Inicie o MySQL Server
+  <a href="#conclusao" class="md-nav__link">
+    Conclusão
   </a>
   
 </li>
@@ -557,38 +611,21 @@
                   
 
 
-<h1 id="instalacao-do-mysql-server-no-centos-80">Instalação do MySQL Server no CentOS 8.0</h1>
-<p>O MySQL Server é um sistema gerenciador de banco de dados relacionais amplamente utilizado. O CentOS 8.0 é um sistema operacional baseado em Linux popular que é compatível com o MySQL Server. Neste guia, você aprenderá como instalar o MySQL Server no CentOS 8.0 usando o gerenciador de pacotes yum.</p>
-<h3 id="pre-requisitos">Pré-requisitos</h3>
-<p>Antes de começar, certifique-se de que o CentOS 8.0 esteja atualizado com os pacotes mais recentes. Para fazer isso, execute o seguinte comando:</p>
-<p><code>sudo yum update</code></p>
-<h3 id="passo-1-adicione-o-repositorio-mysql">Passo 1: Adicione o repositório MySQL</h3>
-<p>O MySQL Server não está disponível nos repositórios padrão do CentOS 8.0. Você precisará adicionar o repositório oficial do MySQL para instalar o servidor.</p>
-<p>Para fazer isso, crie um arquivo chamado <code>mysql.repo</code> no diretório <code>/etc/yum.repos.d/</code> usando o editor de texto de sua preferência. No exemplo a seguir, usaremos o editor de linha de comando nano:</p>
-<p><code>sudo nano /etc/yum.repos.d/mysql.repo</code></p>
-<p>Adicione o seguinte conteúdo ao arquivo <code>mysql.repo</code>:</p>
-<p>Salve e feche o arquivo.</p>
-<h3 id="passo-2-instale-o-mysql-server">Passo 2: Instale o MySQL Server</h3>
-<p>Agora que você adicionou o repositório MySQL, pode instalar o MySQL Server usando o gerenciador de pacotes yum. Execute o seguinte comando para instalar o MySQL Server:</p>
-<p><code>sudo yum install mysql-server</code></p>
-<p>O comando acima instalará o MySQL Server e suas dependências.</p>
-<h3 id="passo-3-inicie-o-mysql-server">Passo 3: Inicie o MySQL Server</h3>
-<p>Após a instalação, inicie o serviço do MySQL Server executando o seguinte comando:</p>
-<p><code>sudo systemctl start mysqld</code></p>
-<p>Você também pode verificar o status do serviço MySQL Server usando o seguinte comando:</p>
-<p><code>sudo systemctl status mysqld</code></p>
-<p>Se o serviço estiver em execução, você verá uma saída semelhante a esta:</p>
-<p>● mysqld.service - MySQL 8.0 database server
-Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)
-Active: active (running) since Sat 2023-03-13 16:30:00 UTC; 10s ago
-Docs: man:mysqld(8)
-http://dev.mysql.com/doc/refman/en/using-systemd.html
-Process: 22005 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)
-Process: 21982 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)
-Main PID: 22007 (mysqld)
-Status: "Server is operational"
-Tasks: 38 (limit: 32768)
-Memory</p>
+<h1 id="detalhes-e-homologacao-do-centos-80">Detalhes e Homologação do CentOS 8.0</h1>
+<h2 id="introducao">Introdução</h2>
+<p>O CentOS 8.0 é uma distribuição Linux de código aberto baseada no Red Hat Enterprise Linux (RHEL) 8.0. É conhecido por sua estabilidade, segurança e recursos avançados, tornando-se uma das distribuições Linux mais populares do mundo.</p>
+<p>Neste documento, forneceremos informações detalhadas sobre a distribuição CentOS 8.0 e como ela pode ser homologada em sua organização.</p>
+<h2 id="caracteristicas-do-centos-80">Características do CentOS 8.0</h2>
+<h3 id="pacotes-de-software">Pacotes de software</h3>
+<p>O CentOS 8.0 inclui pacotes de software de código aberto, como Apache, Nginx, PHP, MariaDB, MySQL, PostgreSQL, Python, Perl, Ruby e muitos outros. Ele também inclui uma ampla gama de ferramentas de desenvolvimento, como GCC, GDB, Git e SVN.</p>
+<h3 id="kernel-do-linux">Kernel do Linux</h3>
+<p>O CentOS 8.0 inclui a versão 4.18 do kernel do Linux. Ele oferece suporte a recursos avançados, como virtualização, segurança, criptografia e muito mais.</p>
+<h3 id="seguranca">Segurança</h3>
+<p>O CentOS 8.0 oferece uma ampla gama de recursos de segurança, como SELinux, FirewallD, criptografia de disco, autenticação Kerberos, SSH seguro, entre outros.</p>
+<h3 id="gerenciamento-de-pacotes">Gerenciamento de pacotes</h3>
+<p>O CentOS 8.0 usa o gerenciador de pacotes DNF (Dandified Yum) para instalar, atualizar e remover pacotes de software. Ele também inclui o módulo AppStream, que fornece aos usuários uma ampla variedade de aplicativos pré-empacotados.</p>
+<h2 id="conclusao">Conclusão</h2>
+<p>O CentOS 8.0 é uma distribuição Linux estável, segura e confiável. Ele oferece uma ampla variedade de recursos avançados e é compatível com muitos aplicativos e serviços populares. Ao homologar e implementar o CentOS 8.0 em sua organização, você pode obter uma plataforma confiável para suas necessidades de negócios. Certifique-se de seguir as etapas adequadas de homologação para garantir que a implantação seja bem-sucedida e segura.</p>
 
 
 
